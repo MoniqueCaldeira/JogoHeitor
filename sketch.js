@@ -1,6 +1,6 @@
 var player;
 var NPCteste;
-var armazem;
+//var armazem;
 var pistaNPC;
 var pistaArmazem;
 var NPCguia;
@@ -17,6 +17,7 @@ var NPCFULANO;
 var escuro;
 var disjuntor;
 var controlePista = true;
+
 function preload(){
   
 }
@@ -24,10 +25,8 @@ function preload(){
 function setup(){
   createCanvas(displayWidth,displayHeight);
 
-
+  /*
   NPCteste = createSprite(400, 300, 40, 40);
-
-  armazem = createSprite(900, 300, 200, 200);
 
   NPCguia = createSprite(800, 600, 40, 40);
 
@@ -49,7 +48,7 @@ function setup(){
 
   disjuntor = createSprite(1007, 300, 15, 20);
   disjuntor.shapeColor = "purple";
-
+  */
   player = createSprite(800, 200, 40, 40);
   player.shapeColor = "blue";
 
@@ -106,14 +105,15 @@ function draw(){
   camera.position.x = player.x;
   camera.position.y = player.y;
 
-  interacaoNPC(NPCteste, pistaNPC);
-  interacaoNPC(armazem, pistaArmazem);
-  interacaoNPC(NPCguia, pistaGUIA);
-  interacaoNPC(vestiario, pistaVestiario);
-  interacaoNPC(gaveta, pistaGaveta);
+ // interacaoNPC(NPCteste, pistaNPC);
+  
+  //interacaoNPC(NPCguia, pistaGUIA);
+  //interacaoNPC(vestiario, pistaVestiario);
+  //interacaoNPC(gaveta, pistaGaveta);
   
   
-  player.collide(escuro);
+  //player.collide(escuro);
+  fase1();
 
   drawSprites();
 }
@@ -139,4 +139,11 @@ function interacaoNPC(NPC, fala){
     }, 10000);
   }
    
+}
+
+function fase1(){
+  var armazem = createSprite(900, 300, 200, 200);
+  armazem.shapeColor = "green";
+
+  interacaoNPC(armazem, pistaArmazem);
 }
